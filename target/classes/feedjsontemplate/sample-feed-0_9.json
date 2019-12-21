@@ -1,0 +1,357 @@
+{
+	"id": null,
+	"versionName": null,
+	"templateId": "0a3faeb6-65ba-4671-b8de-5c641ba0dbfc",
+	"feedName": "testOffice",
+	"description": "",
+	"systemFeedName": "test_office",
+	"inputProcessorType": "com.thinkbiganalytics.nifi.v2.core.watermark.LoadHighWaterMark",
+	"inputProcessorName": "Database",
+	"inputProcessor": null,
+	"nonInputProcessors": null,
+	"properties": [
+		{
+			"processGroupName": "NiFi Flow",
+		      "processorName": "Fetch RDBMS Data",
+		      "processorId": "a02a9ce8-61b0-376f-00b7-f3841467478a",
+		      "processGroupId": "c732d9c0-0164-1000-b169-3d4dea034f56",
+		      "processorType": "com.thinkbiganalytics.nifi.v2.ingest.GetTableData",
+		      "key": "Source Database Connection",
+		      "value": "adc4634a-0163-1000-81d8-40e5bab304cb",
+		      "expressionProperties": null,
+		      "propertyDescriptor": {
+		        "name": "Source Database Connection",
+		        "displayName": "Source Database Connection",
+		        "description": "The database where the source table resides",
+		        "defaultValue": null,
+		        "allowableValues": [
+		          {
+		            "displayName": "Kylo MySQL",
+		            "value": "adc4634a-0163-1000-81d8-40e5bab304cb"
+		          },
+		          {
+		            "displayName": "Kylo Teradata",
+		            "value": "a8b77ca9-0164-1000-a1d5-7f0b6a792c2a"
+		          }
+		        ],
+		        "required": true,
+		        "sensitive": false,
+		        "dynamic": false,
+		        "supportsEl": false,
+		        "identifiesControllerService": "org.apache.nifi.dbcp.DBCPService",
+		        "hidden": false
+		      },
+		      "templateValue": null,
+		      "userEditable": true,
+		      "renderType": "select",
+		      "renderOptions": {
+		        
+		      },
+		      "selected": false,
+		      "inputProperty": false,
+		      "containsConfigurationVariables": false,
+		      "sensitive": false,
+		      "required": true,
+		      "templateProperty": null,
+		      "hidden": false,
+		      "remoteProcessGroupProperty": false,
+		      "idKey": "c732d9c0-0164-1000-b169-3d4dea034f56-a02a9ce8-61b0-376f-00b7-f3841467478a-Source Database Connection",
+		      "processorNameTypeKey": "Fetch RDBMS Data-com.thinkbiganalytics.nifi.v2.ingest.GetTableData-Source Database Connection",
+		      "nameKey": "NiFi Flow-Fetch RDBMS Data-Source Database Connection",
+		      "renderWithCodeMirror": false,
+		      "displayValue": "2e0625d6-f70a-3e24-78a3-825763e7a08a",
+		      "isLoading": false,
+		      "formKey": "source_database_connectionfetch_rdbms_data"
+		},
+		{
+			"processGroupName": "NiFi Flow",
+			"processorName": "Fetch RDBMS Data",
+			"processorId": "a02a9ce8-61b0-376f-9d65-b9de3707860a",
+			"processGroupId": "232c9ea4-0164-1000-42e7-042250f58be4",
+			"processorType": "com.thinkbiganalytics.nifi.v2.ingest.GetTableData",
+			"key": "Load Strategy",
+			"value": "FULL_LOAD",
+			"expressionProperties": null,
+			"propertyDescriptor": {
+				"name": "Load Strategy",
+				"displayName": "Load Strategy",
+				"description": "Whether to load the entire table or perform an incremental extract",
+				"defaultValue": "FULL_LOAD",
+				"allowableValues": [
+					{
+						"displayName": "FULL_LOAD",
+						"value": "FULL_LOAD",
+						"description": null
+					},
+					{
+						"displayName": "INCREMENTAL",
+						"value": "INCREMENTAL",
+						"description": null
+					}
+				],
+				"required": true,
+				"sensitive": false,
+				"dynamic": false,
+				"supportsEl": false,
+				"identifiesControllerService": null,
+				"hidden": false
+			},
+			"templateValue": null,
+			"userEditable": true,
+			"renderType": "select",
+			"renderOptions": {},
+			"selected": false,
+			"inputProperty": false,
+			"containsConfigurationVariables": false,
+			"sensitive": false,
+			"required": true,
+			"templateProperty": null,
+			"hidden": false,
+			"remoteProcessGroupProperty": false,
+			"idKey": "232c9ea4-0164-1000-42e7-042250f58be4-a02a9ce8-61b0-376f-9d65-b9de3707860a-Load Strategy",
+			"processorNameTypeKey": "Fetch RDBMS Data-com.thinkbiganalytics.nifi.v2.ingest.GetTableData-Load Strategy",
+			"nameKey": "NiFi Flow-Fetch RDBMS Data-Load Strategy",
+			"renderWithCodeMirror": false,
+			"displayValue": "FULL_LOAD"
+		},
+		{
+			"processGroupName": "NiFi Flow",
+			"processorName": "Fetch RDBMS Data",
+			"processorId": "a02a9ce8-61b0-376f-9d65-b9de3707860a",
+			"processGroupId": "232c9ea4-0164-1000-42e7-042250f58be4",
+			"processorType": "com.thinkbiganalytics.nifi.v2.ingest.GetTableData",
+			"key": "Date Field",
+			"value": null,
+			"expressionProperties": null,
+			"propertyDescriptor": {
+				"name": "Date Field",
+				"displayName": "Date Field",
+				"description": "Source field containing a modified date for tracking incremental load",
+				"defaultValue": null,
+				"allowableValues": null,
+				"required": false,
+				"sensitive": false,
+				"dynamic": false,
+				"supportsEl": true,
+				"identifiesControllerService": null,
+				"hidden": false
+			},
+			"templateValue": null,
+			"userEditable": true,
+			"renderType": "text",
+			"renderOptions": {},
+			"selected": false,
+			"inputProperty": false,
+			"containsConfigurationVariables": false,
+			"sensitive": false,
+			"required": false,
+			"templateProperty": null,
+			"hidden": false,
+			"remoteProcessGroupProperty": false,
+			"idKey": "232c9ea4-0164-1000-42e7-042250f58be4-a02a9ce8-61b0-376f-9d65-b9de3707860a-Date Field",
+			"processorNameTypeKey": "Fetch RDBMS Data-com.thinkbiganalytics.nifi.v2.ingest.GetTableData-Date Field",
+			"nameKey": "NiFi Flow-Fetch RDBMS Data-Date Field",
+			"renderWithCodeMirror": false,
+			"displayValue": null
+		},
+		{
+			"processGroupName": "NiFi Flow",
+			"processorName": "Fetch RDBMS Data",
+			"processorId": "a02a9ce8-61b0-376f-9d65-b9de3707860a",
+			"processGroupId": "232c9ea4-0164-1000-42e7-042250f58be4",
+			"processorType": "com.thinkbiganalytics.nifi.v2.ingest.GetTableData",
+			"key": "Output Type",
+			"value": "DELIMITED",
+			"expressionProperties": null,
+			"propertyDescriptor": {
+				"name": "Output Type",
+				"displayName": "Output Type",
+				"description": "How should the results be returned.  Either a Delimited output such as CSV, or AVRO.  If delimited you must specify the delimiter.",
+				"defaultValue": "DELIMITED",
+				"allowableValues": [
+					{
+						"displayName": "DELIMITED",
+						"value": "DELIMITED",
+						"description": null
+					},
+					{
+						"displayName": "AVRO",
+						"value": "AVRO",
+						"description": null
+					}
+				],
+				"required": true,
+				"sensitive": false,
+				"dynamic": false,
+				"supportsEl": false,
+				"identifiesControllerService": null,
+				"hidden": false
+			},
+			"templateValue": null,
+			"userEditable": true,
+			"renderType": "select",
+			"renderOptions": {},
+			"selected": false,
+			"inputProperty": false,
+			"containsConfigurationVariables": false,
+			"sensitive": false,
+			"required": true,
+			"templateProperty": null,
+			"hidden": false,
+			"remoteProcessGroupProperty": false,
+			"idKey": "232c9ea4-0164-1000-42e7-042250f58be4-a02a9ce8-61b0-376f-9d65-b9de3707860a-Output Type",
+			"processorNameTypeKey": "Fetch RDBMS Data-com.thinkbiganalytics.nifi.v2.ingest.GetTableData-Output Type",
+			"nameKey": "NiFi Flow-Fetch RDBMS Data-Output Type",
+			"renderWithCodeMirror": false,
+			"displayValue": "DELIMITED",
+			"formKey": "output_typefetch_rdbms_data"
+		}
+	],
+	"securityGroups": [],
+	"schedule": {
+		"schedulingPeriod": "5 sec",
+		"schedulingStrategy": "TIMER_DRIVEN",
+		"concurrentTasks": 1,
+		"schedulingStrategyTouched": true
+	},
+	"defineTable": true,
+	"allowPreconditions": false,
+	"dataTransformationFeed": false,
+	"table": {
+		"tableSchema": {
+			"name": "test_office",
+			"fields": [
+				
+			]
+		},
+		"sourceTableSchema": {
+			"name": "toys.offices",
+			"tableSchema": null,
+			"fields": [
+				
+			]
+		},
+		"feedTableSchema": {
+			"name": null,
+			"fields": [
+				
+			]
+		},
+		"method": "EXISTING_TABLE",
+		"existingTableName": "toys.offices",
+		"structured": false,
+		"targetMergeStrategy": "DEDUPE_AND_MERGE",
+		"feedFormat": "ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTIES ( 'separatorChar' = ',' ,'escapeChar' = '\\\\' ,'quoteChar' = '\"') STORED AS TEXTFILE",
+		"targetFormat": "STORED AS ORC",
+		"feedTblProperties": "",
+		"fieldPolicies": [],
+		"partitions": [],
+		"options": {
+			"compress": false,
+			"compressionFormat": "NONE",
+			"auditLogging": true,
+			"encrypt": false,
+			"trackHistory": false
+		},
+		"sourceTableIncrementalDateField": "",
+		"tableType": "SNAPSHOT"
+	},
+	"category": {
+		"id": "3bb6cd6e-88dd-42b9-8ecd-13e6667d40e0",
+		"name": "System",
+		"systemName": "system"
+	},
+	"dataOwner": "",
+	"tags": [],
+	"reusableFeed": false,
+	"dataTransformation": {
+		"chartViewModel": null,
+		"datasourceIds": null,
+		"datasources": null,
+		"dataTransformScript": null,
+		"sql": null,
+		"states": []
+	},
+	"userProperties": [],
+	"options": {
+		"skipHeader": true
+	},
+	"active": true,
+	"roleMemberships": [],
+	"owner": {
+		"displayName": "Data Lake Administrator",
+		"email": null,
+		"enabled": true,
+		"groups": [
+			"admin",
+			"user"
+		],
+		"systemName": "dladmin",
+		"name": "Data Lake Administrator",
+		"title": "Data Lake Administrator",
+		"type": "user",
+		"_lowername": "data lake administrator",
+		"_lowerSystemName": "dladmin",
+		"_lowerDisplayName": "data lake administrator"
+	},
+	"roleMembershipsUpdated": false,
+	"tableOption": {},
+	"cloned": false,
+	"usedByFeeds": [],
+	"allowIndexing": true,
+	"historyReindexingStatus": "NEVER_RUN",
+	"view": {
+		"generalInfo": {
+			"disabled": false
+		},
+		"feedDetails": {
+			"disabled": false
+		},
+		"table": {
+			"disabled": false
+		},
+		"dataPolicies": {
+			"disabled": false
+		},
+		"properties": {
+			"disabled": false,
+			"dataOwner": {
+				"disabled": false
+			},
+			"tags": {
+				"disabled": false
+			}
+		},
+		"accessControl": {
+			"disabled": false
+		},
+		"schedule": {
+			"disabled": false,
+			"schedulingPeriod": {
+				"disabled": false
+			},
+			"schedulingStrategy": {
+				"disabled": false
+			},
+			"active": {
+				"disabled": false
+			},
+			"executionNode": {
+				"disabled": false
+			},
+			"preconditions": {
+				"disabled": false
+			}
+		}
+	},
+	"totalSteps": 7,
+	"stepperTemplateUrl": "js/feed-mgr/feeds/define-feed/define-feed-stepper.html",
+	"feedDescriptor": "",
+	"templateName": "Advanced Ingest",
+	"templateTableOption": "DEFINE_TABLE",
+	"totalPreSteps": 0,
+	"renderTemporaryPreStep": false,
+	"isStream": false,
+	"allowSkipHeaderOption": true,
+	"schemaChanged": false
+}
